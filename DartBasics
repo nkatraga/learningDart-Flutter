@@ -1,0 +1,52 @@
+//This is the recommended way to define lists. List constructor doesn't exist anymore
+List<String> animals = <String>[]; 
+
+void main () {
+  //incrementOperationDemo();
+  registerAndPrintAnimals();
+  
+}
+
+registerAndPrintAnimals(){
+  registerAnimal("Hank","Dog");
+  registerAnimal("Fred","Cat");
+  registerAnimal("Ralph","Monkey");
+  registerAnimal("Tom","");
+  registerAnimal("Bob","Dog");
+  print(animals);
+}
+
+bool registerAnimal(String name, String kind){
+  if(name.isEmpty || kind.isEmpty){
+    return false;
+  } else {
+    animals.add("$name the $kind");
+    return true;
+  }
+  
+}
+
+
+
+incrementOperationDemo () {
+  print("++variable increments the variable by one and returns the result");
+  int value = 20;
+  value = ++value;
+  print("The value is " + value.toString());
+  print("");
+  
+  print("variable++ returns the variable first and then increments the variable by one");
+  int othervalue;
+  othervalue = value++;
+  print("The othervalue is " + othervalue.toString());
+  print("The value is " + value.toString());
+  print("");
+  
+  print("You can also call a variable inside a string by using a \$ symbol");
+  print("The value is $value");
+  print("If you want to print the \$ symbol in a normal string, you need to escape it with a \\");
+  print("");
+  
+  print("There is also something called a 'raw string' where nothing inside it is interpreted");
+  print(r"The value is $value");
+} 
